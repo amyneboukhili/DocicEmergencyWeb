@@ -1,0 +1,128 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #e0f7f7;
+  color: #333;
+}
+
+/* Header */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1cb5a3;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.login-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.buy-btn {
+  background-color: #a3f7bf;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #1a4d4d;
+}
+
+.buy-btn:hover {
+  background-color: #8be6a5;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 50px;
+  background-color: #e0f7f7; 
+  width: 100%;
+  min-height: 70vh;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.cta-btn {
+  background-color: #1cb5a3;
+  background-size: cover;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  background-color: #17a18f;
+  background-size: cover;
+}
+
+/* .hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+} */
+
+.hero-image img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+}
+
+.imageClass{
+   
+    width: 150;
+    border: #17a18f;
+    
+}

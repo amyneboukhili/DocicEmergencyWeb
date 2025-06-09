@@ -1,0 +1,38 @@
+  <app-navbar></app-navbar>
+<div class="map-container full-background ">
+  <google-map
+    height="100%"
+    width="100%"
+    [center]="center"
+    [zoom]="zoom">
+<map-marker
+  *ngFor="let position of markerPositions; let i = index"
+  [position]="position"
+  [options]="markerOptions"
+  (mapClick)="openInfoWindow(i)">
+</map-marker>
+
+ <map-info-window>
+  <div *ngIf="selectedEmergency" class="infoWrapper">
+    <div class="windowContainer">
+   <p><strong>Emergency ID:</strong> {{ selectedEmergency.id }}<br></p> 
+    <p>
+      <strong>Description:</strong> {{ selectedEmergency.user_profile }}<br>
+    </p>
+   <p><strong>Lat:</strong> {{ selectedEmergency.latitude }}<br></p> 
+   <p><strong>Lng:</strong> {{ selectedEmergency.longitude }} <br>
+</p>
+      <p><strong>date:</strong> {{ selectedEmergency.dateEmergency}} <br></p>  
+  </div>
+  <button type="button" class="buttonsendHelp"> send help !</button>
+
+  </div>
+</map-info-window>
+  </google-map>
+</div>
+<div class="container">
+<button class="buttonEmergency" (click)="findEmergency()">
+  Find emergency
+  <img src="icons/imergencyCall.png" alt="Emergency Call" class="button-icon">
+</button>
+</div>

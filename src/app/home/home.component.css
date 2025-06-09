@@ -1,0 +1,85 @@
+.mapDiv{
+    border-color: black;
+    border-radius: 10px;
+    border-width: 5px;
+    height: 300px;
+    width: 300px;
+   
+}
+.map-container {
+ margin-top: 8px;
+  width: 100%;
+  height: 500px;
+  border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+body{
+    background-color: rgb(205, 243, 230);
+    font-family: 'Poppins', sans-serif;
+    height:max-content;
+}
+footer{
+    background-color: rgb(205, 243, 230);
+}
+
+.buttonEmergency {
+  display: block;
+  margin: 8px auto;
+  padding: 8px;
+  gap: 8px;
+  width: 200px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-icon {
+  width: 30px; 
+  height: 30px;
+}
+
+.custom-snackbar {
+  background-color: #eeb738 !important; 
+  color: #ffffff !important;            
+  font-weight: bold;
+}
+
+.buttonsendHelp {
+  display: block;
+  margin: 8px auto;
+  padding: 8px;
+  gap: 8px;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: greenyellow;
+  color: white;
+  font-weight: bold;
+  border: none;
+  margin: 16px auto 0;
+}
+
+.windowdiv{
+  height: 200px;
+  width:300px;
+  border-radius: 10px;
+  border: none;
+}
+
+
+.windowContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center;     /* Center horizontally */
+  padding: 10px;
+  text-align: center;
+}
