@@ -1,226 +1,238 @@
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif; /* Using Inter font for a clean, modern look */
-    display: flex;
-    flex-direction: column; /* Stack navbar and main content vertically */
-    align-items: center; /* Center overall content horizontally */
-    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
-    background: #F8F8F8; /* A light grey background for the area outside the main content block */
-}
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+            padding: 40px;
+            margin: 0;
+        }
 
-/* Overall Main Content Area - This acts as your "Desktop - 5" container */
-.dashboard-content {
-    position: relative;
-    width: 1817px; /* Specified width from your Desktop - 5 requirements */
-    height: 1024px; /* Specified height from your Desktop - 5 requirements */
-    background: #FFFFFF; /* White background for the main content area */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for the content area */
-    display: flex; /* Use flexbox to position cards */
-    justify-content: center; /* Center the cards horizontally within this area */
-    align-items: flex-start; /* Align cards to the top of the content area */
-    padding-top: 50px; /* Space from the top after the navbar */
-    box-sizing: border-box; /* Include padding in width/height calculations */
-}
+        .card-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
 
-/* Navbar Styles (Basic Placeholder - adjust as per your existing navbar) */
-.navbar {
-    width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eee;
-    box-sizing: border-box;
-}
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            width: 380px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
 
-.nav-brand {
-    font-size: 1.5em;
-    font-weight: 600;
-    color: #333;
-}
+        .card.waiting {
+            border-color: #FF5A5F;
+        }
 
-.nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 30px;
-}
+        .card.solved {
+            border-color: #4CAF50;
+        }
 
-.nav-links li a {
-    text-decoration: none;
-    color: #777;
-    font-weight: 500;
-    font-size: 1.1em;
-    transition: color 0.3s ease;
-}
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px 16px 24px;
+            border-bottom: none;
+        }
 
-.nav-links li a:hover,
-.nav-links li a.active {
-    color: #007bff; /* Example active/hover color */
-}
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
 
-/* Card Container for flex layout of the cards */
-.card-container {
-    display: flex;
-    gap: 30px; /* Space between cards */
-    flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
-    justify-content: center; /* Center cards if they wrap to the next line */
-    width: 100%; /* Take full width of its parent (.dashboard-content) */
-    padding: 0 50px; /* Horizontal padding for the group of cards */
-    box-sizing: border-box;
-}
+        .mission-label {
+            font-size: 13px;
+            color: #999;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
 
-/* Card Base Styles */
-.card {
-    background-color: #FFFFFF;
-    border-radius: 12px; /* Rounded corners for the cards */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    width: 320px; /* Fixed width for cards as per the image */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Space between sections inside the card */
-    border: 1px solid #E0E0E0; /* Default light grey border */
-    box-sizing: border-box; /* Include padding in width/height calculations */
-}
+        .mission-type {
+            font-weight: 600;
+            color: #333;
+            font-size: 18px;
+            margin: 0;
+        }
 
-/* Card Header Section */
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between header elements */
-    padding-bottom: 15px; /* Padding at the bottom of the header */
-    border-bottom: 1px dashed #E0E0E0; /* Dashed separator line */
-}
+        .status-tag {
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
 
-.mission-label {
-    font-size: 0.8em;
-    color: #999;
-    text-transform: uppercase;
-}
+        .card.waiting .status-tag {
+            background-color: #FF5A5F;
+        }
 
-.mission-type {
-    font-weight: 600;
-    color: #333;
-}
+        .card.solved .status-tag {
+            background-color: #4CAF50;
+        }
 
-.status-tag {
-    margin-left: auto; /* Pushes the status tag to the far right */
-    padding: 5px 12px;
-    border-radius: 20px; /* Highly rounded tag */
-    font-size: 0.75em;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-}
+        .card-body {
+            padding: 0 24px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-/* Status Specific Styles (for the border and status tag color) */
-.card.waiting .status-tag {
-    background-color: #FF5A5F; /* Red for waiting status */
-}
+        .location-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+        }
 
-.card.solved .status-tag {
-    background-color: #4CAF50; /* Green for solved status */
-}
+        .location-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
 
-.card.waiting {
-    border-color: #FF5A5F; /* Red border for waiting cards */
-}
+        .location-icon.pickup {
+            background-color: #E8F5E8;
+        }
 
-.card.solved {
-    border-color: #4CAF50; /* Green border for solved cards */
-}
+        .location-icon.destination {
+            background-color: #E3E8FF;
+        }
 
-/* Card Body Section */
-.card-body {
-    display: flex;
-    flex-direction: column;
-    gap: 12px; /* Space between information rows */
-}
+        .location-icon svg {
+            width: 18px;
+            height: 18px;
+        }
 
-.card-body > div {
-    display: flex;
-    align-items: center;
-    font-size: 0.9em;
-    color: #555;
-}
+        .pickup-icon {
+            fill: #4CAF50;
+        }
 
-.card-body i {
-    color: #888; /* Icon color */
-    margin-right: 10px;
-    width: 20px; /* Fixed width for icons to align text consistently */
-    text-align: center;
-}
+        .destination-icon {
+            fill: #5B6AD0;
+        }
 
-.location span {
-    font-weight: 500;
-    color: #333;
-}
+        .ambulance-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 8px;
+        }
 
-.ambulance-info {
-    font-weight: 500;
-}
+        .ambulance-avatar {
+            width: 48px;
+            height: 48px;
+            background-color: #E0E0E0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
 
-.ambulance-number {
-    font-weight: 600;
-    color: #007bff; /* A distinct color for the ambulance number */
-    margin-left: 5px;
-}
+        .ambulance-avatar svg {
+            width: 24px;
+            height: 24px;
+            fill: #888;
+        }
 
-.people-info {
-    justify-content: space-between; /* Distribute items to the ends: "4 people" on left, icons on right */
-}
+        .ambulance-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
 
-.people-info i {
-    color: #888;
-}
+        .ambulance-label {
+            font-size: 13px;
+            color: #888;
+            font-weight: 400;
+        }
 
-.icon-group {
-    display: flex;
-    gap: 15px; /* Space between the two action icons */
-}
+        .ambulance-details {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-/* Responsive Adjustments */
-@media (max-width: 1817px) {
-    /* When screen is narrower than the fixed desktop width, allow content to be fluid */
-    .dashboard-content {
-        width: 100%; /* Take full available width */
-        height: auto; /* Allow height to adjust based on content */
-        padding: 30px 20px; /* Adjust padding for smaller screens */
-        box-shadow: none; /* Remove fixed desktop shadow to make it feel more fluid */
-    }
+        .ambulance-number {
+            font-weight: 600;
+            color: #333;
+            font-size: 16px;
+        }
 
-    .card-container {
-        gap: 20px; /* Slightly smaller gap between cards on smaller screens */
-        padding: 0; /* Remove horizontal padding here, parent handles it */
-    }
+        .people-count {
+            font-size: 14px;
+            color: #666;
+        }
 
-    .card {
-        width: calc(50% - 20px); /* Make cards take roughly half the width, two cards per row */
-        max-width: 320px; /* Still prefer fixed width, but allow shrinking */
-    }
-}
+        .action-icons {
+            display: flex;
+            gap: 8px;
+            margin-left: auto;
+        }
 
-@media (max-width: 768px) {
-    .navbar {
-        padding: 15px 20px;
-        flex-direction: column; /* Stack brand and links vertically on mobile */
-        gap: 10px;
-    }
+        .action-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
 
-    .nav-links {
-        gap: 15px;
-    }
+        .chat-icon {
+            background-color: #E3E8FF;
+            color: #5B6AD0;
+            position: relative;
+        }
 
-    .dashboard-content {
-        padding-top: 20px; /* Reduce top padding on mobile */
-    }
+        .chat-icon::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 8px;
+            height: 8px;
+            background-color: #FF5A5F;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
 
-    .card {
-        width: 100%; /* One card per row on mobile */
-        max-width: none; /* Remove max-width constraint for full responsiveness */
-    }
-}
+        .phone-icon {
+            background-color: #F0F0F0;
+            color: #666;
+        }
+
+        .action-icon:hover {
+            opacity: 0.8;
+        }
+
+        .connector-line {
+            width: 2px;
+            height: 20px;
+            background-color: #E0E0E0;
+            margin-left: 15px;
+            margin-top: -8px;
+            margin-bottom: -8px;
+        }
+        

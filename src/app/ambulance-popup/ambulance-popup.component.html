@@ -1,0 +1,61 @@
+<div 
+      class="modal-overlay" 
+      [class.show]="isVisible"
+      (click)="onBackdropClick($event)">
+      
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+          <h2 class="modal-title">
+            <svg class="ambulance-icon" viewBox="0 0 24 24">
+              <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11C5.84 5 5.28 5.42 5.08 6.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/>
+              <circle cx="6.5" cy="14.5" r="1.5"/>
+              <circle cx="17.5" cy="14.5" r="1.5"/>
+              <path d="M5 11l1.5-4.5h11L19 11H5z"/>
+            </svg>
+            Emergency Details
+          </h2>
+          <button class="close-btn" (click)="closeModal()" type="button">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-section">
+            <div class="section-header">
+              <svg class="section-icon" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/>
+              </svg>
+              <h3>Current Situation</h3>
+            </div>
+            <p class="situation-text">{{ situation }}</p>
+          </div>
+
+          <div class="modal-section">
+            <div class="section-header">
+              <svg class="section-icon" viewBox="0 0 24 24">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <h3>Medical Recommendation</h3>
+            </div>
+            <p class="recommendation-text">{{ recommendation }}</p>
+          </div>
+
+          <div class="modal-actions">
+            <button class="action-btn primary" (click)="closeModal()">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 13l4 4L19 7"/>
+              </svg>
+              Acknowledged
+            </button>
+            <button class="action-btn secondary" (click)="closeModal()">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
