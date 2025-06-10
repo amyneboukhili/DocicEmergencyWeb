@@ -1,0 +1,259 @@
+body {
+    margin: 0;
+    font-family: 'Comic Neue', cursive; /* Using a comic-style font for a friendly feel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5; /* A light background for the whole page */
+}
+
+.container {
+    display: flex;
+    width: 900px; /* Adjust as needed, but keeping it within the original design intent */
+    height: 600px; /* Adjust as needed */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Slightly rounded corners for the whole container */
+    overflow: hidden; /* Ensures nothing spills out */
+}
+
+.left-panel {
+    /* width: 400px; */
+    height: 912px;
+    /* max-width: 411px; */
+    background-color: #ffffff;
+    padding: 30px;
+    display: flex
+;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+.welcome-text {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 0; /* Remove specific margin here as gap will handle spacing */
+}
+
+.login-content-wrapper { /* New wrapper for the login section */
+    width: 350px; /* Specified width for the login section */
+    height: 80px; /* Specified height for the login section */
+    display: flex;
+    flex-direction: column;
+    /* Gap between elements inside the login section. Assuming 8px for this gap. */
+    gap: 8px; /* Applied the specified gap for the login section content */
+    box-sizing: border-box;
+    /* Adjustments for children of login-content-wrapper to fit its height */
+    overflow: hidden; /* Hide overflowing content if the height is too small for all elements */
+}
+
+
+.login-subtext {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 0; /* Remove specific margin here as gap will handle spacing */
+}
+
+.instruction-text {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 0; /* Remove specific margin here as gap will handle spacing */
+    text-align: center;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 0; /* Remove specific margin here as gap will handle spacing */
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px; /* Keep a small margin between label and input */
+}
+
+.input-group input {
+    width: 100%; /* Make input fill the input-group width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.password-toggle {
+    position: absolute; /* Position relative to the input-group */
+    right: 10px; /* Adjust as needed */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.continue-button {
+    width: 350px; /* Specified width for the button */
+    height: 40px; /* Specified height for the button */
+    background-color: #18181B; /* Dark background as specified in the original login button */
+    color: #FFF;
+    border: none;
+    border-radius: 12px; /* Specified border-radius (Radius/radius-md) */
+    /* Combined padding values: Padding/padding-xxs and Padding/padding-sm. Assuming xxs=10px, sm=16px. */
+    padding: 10px 16px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 0; /* Remove specific margin here as gap will handle spacing */
+    align-self: flex-start; /* Align button to the left within the flex column */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Ensures padding is included in the total width/height */
+    /* gap: Spacing/spacing-sm; - This applies to a flex/grid container, not a button. Removed. */
+}
+
+.continue-button:hover {
+    background-color: #333333; /* Slightly lighter dark for hover, adjust as needed */
+}
+
+.right-panel {
+    flex: 1;
+    background-color: #66D2CE; /* Light blue background */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px; /* Space between elements */
+}
+
+.medical-svg {
+    width: 241px;
+    height: 227px;
+    /* top: 320px; left: 1035px; - These are design tool coordinates. Not applied. */
+}
+
+.register-text {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.heart-icon {
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border: 5px solid #00BFFF; /* A clear blue border */
+    border-radius: 50%; /* Circle for the heart shape base */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.heart-icon::before,
+.heart-icon::after {
+    content: '';
+    width: 60px;
+    height: 90px; /* Adjusted height for a more heart-like shape */
+    background-color: #fff;
+    border: 5px solid #00BFFF;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    top: -30px; /* Adjust to position the "bumps" of the heart */
+}
+
+.heart-icon::before {
+    left: -20px;
+    transform: rotate(-45deg);
+    transform-origin: 100% 100%;
+}
+
+.heart-icon::after {
+    right: -20px;
+    transform: rotate(45deg);
+    transform-origin: 0% 100%;
+}
+
+.cross {
+    width: 60px;
+    height: 10px;
+    background-color: #00BFFF; /* Blue for the cross */
+    position: absolute;
+    border-radius: 5px;
+    z-index: 1; /* Ensure cross is above heart shape */
+}
+
+.cross::before {
+    content: '';
+    width: 10px;
+    height: 60px;
+    background-color: #00BFFF;
+    position: absolute;
+    top: -25px;
+    left: 25px;
+    border-radius: 5px;
+}
+
+.login-button { /* This was previously the button on the right panel. Renamed for clarity if needed. */
+    width: 350px; /* Specified width for the button */
+    height: 40px; /* Specified height for the button */
+    /* Dark background as specified in the original login button */
+    color: #0f0f0f;
+    border: none;
+    border-radius: 12px; /* Specified border-radius (Radius/radius-md) */
+    /* Combined padding values: Padding/padding-xxs and Padding/padding-sm. Assuming xxs=10px, sm=16px. */
+    padding: 10px 16px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 0; /* Remove specific margin here as gap will handle spacing */
+    align-self: flex-start; /* Align button to the left within the flex column */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Ensures padding is included in the total width/height */
+    /* gap: Spacing/spacing-sm; - This applies to a flex/grid container, not a button. Removed. */
+}
+
+.login-button:hover {
+    background-color: #e9e5e5;; /* Slightly lighter dark for hover, adjust as needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    .left-panel, .right-panel {
+        padding: 30px;
+    }
+
+    .heart-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .heart-icon::before,
+    .heart-icon::after {
+        width: 50px;
+        height: 75px;
+        top: -25px;
+    }
+
+    .cross {
+        width: 50px;
+        height: 8px;
+    }
+
+    .cross::before {
+        width: 8px;
+        height: 50px;
+        left: 21px;
+        top: -21px;
+    }
+}

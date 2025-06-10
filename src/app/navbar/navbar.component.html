@@ -1,14 +1,22 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">DocicEmergency</a>
+    <div class="dropdown">
+      <a class="navbar-brand dropdown-toggle" href="#" id="navbarBrandDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        DocicEmergency
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarBrandDropdown">
+        <li><a class="dropdown-item" routerLink="/dashboard/profile">Profile</a></li>
+        <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+      </ul>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Ambilence</a>
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link active" aria-current="page" href="/dashboard/home">Home</a>
+        <a class="nav-link" href="/dashboard/emergencies">Emergencys</a>
+        <a class="nav-link" href="/dashboard/ambulances">Ambulances</a>
         <a class="nav-link disabled" aria-disabled="true">Disabled</a>
       </div>
     </div>

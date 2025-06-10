@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class WelcomComponent {
   constructor(private router: Router) {}
    goToAbout() {
-    this.router.navigate(['/home']);
+     this.router.navigate(['/choose-auth']);
   }
 
 

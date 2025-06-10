@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Using Inter font for a clean, modern look */
+    display: flex;
+    flex-direction: column; /* Stack navbar and main content vertically */
+    align-items: center; /* Center overall content horizontally */
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    background: #F8F8F8; /* A light grey background for the area outside the main content block */
+}
+
+/* Overall Main Content Area - This acts as your "Desktop - 7" container */
+.dashboard-content {
+    position: relative;
+    width: 1817px; /* Specified width from your Desktop - 7 requirements */
+    height: 1024px; /* Specified height from your Desktop - 7 requirements */
+    background: #FFFFFF; /* White background for the main content area */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for the content area */
+    display: flex; /* Use flexbox to position cards */
+    justify-content: center; /* Center the cards horizontally within this area */
+    align-items: flex-start; /* Align cards to the top of the content area */
+    padding-top: 50px; /* Space from the top after the navbar */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+/* Navbar Styles (Basic Placeholder - adjust as per your existing navbar) */
+.navbar {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+}
+
+.nav-brand {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #333;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #777;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #007bff; /* Example active/hover color */
+}
+
+/* Card Container for flex layout of the cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    gap: 30px; /* Space between cards */
+    justify-content: center; /* Center cards horizontally in the container */
+    width: 100%; /* Take full width of its parent (.dashboard-content) */
+    padding: 0 50px; /* Horizontal padding for the group of cards */
+    box-sizing: border-box;
+}
+
+/* Ambulance Card Base Styles */
+.ambulance-card {
+    background-color: #FFFFFF;
+    border-radius: 12px; /* Rounded corners for the cards */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 320px; /* Fixed width for cards as per the image */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between header, body, and button */
+    border: 1px solid #E0E0E0; /* Default light grey border */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+/* Card Header Section for Ambulance Cards */
+.card-header-ambulance {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between text and circle icon */
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E0E0E0; /* Solid border for header */
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow text to take available space */
+}
+
+.label {
+    font-size: 0.85em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.series-number {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.members {
+    font-size: 0.85em;
+    color: #777;
+}
+
+.circle-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Makes it a circle */
+    background-color: #E0E0E0; /* Grey background for the circle */
+    flex-shrink: 0; /* Prevent it from shrinking */
+}
+
+/* Card Body Section for Ambulance Cards */
+.card-body-ambulance {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between status, location, and button */
+}
+
+.status-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc; /* Default dot color */
+}
+
+.status-dot.available {
+    background-color: #4CAF50; /* Green for available status */
+}
+
+.status-text {
+    font-weight: 600;
+    color: #333;
+    text-transform: capitalize;
+}
+
+.location-info {
+    display: flex;
+    align-items: flex-start; /* Align icon and text to the top */
+    gap: 10px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.location-info i {
+    color: #007bff; /* Blue for location icon */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    padding-top: 2px; /* Small adjustment for visual alignment */
+}
+
+/* Button for Ambulance Cards */
+.more-info-button {
+    background-color: #007bff; /* Blue button color */
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px; /* Slightly rounded corners */
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.more-info-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1817px) {
+    .dashboard-content {
+        width: 100%; /* Make content fluid */
+        height: auto; /* Allow height to adjust */
+        padding: 30px 20px;
+        box-shadow: none; /* Remove fixed desktop shadow */
+    }
+
+    .card-container {
+        gap: 20px; /* Slightly smaller gap between cards */
+        padding: 0;
+    }
+
+    .ambulance-card {
+        width: calc(33.33% - 20px); /* Three cards per row for larger screens if available space */
+        max-width: 320px; /* Maintain preferred max-width */
+    }
+}
+
+@media (max-width: 1200px) {
+    .ambulance-card {
+        width: calc(50% - 15px); /* Two cards per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column; /* Stack brand and links vertically on mobile */
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .dashboard-content {
+        padding-top: 20px;
+    }
+
+    .ambulance-card {
+        width: 100%; /* One card per row on mobile */
+        max-width: none;
+    }
+}
